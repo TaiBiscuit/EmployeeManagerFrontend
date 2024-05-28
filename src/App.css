@@ -1,0 +1,234 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.employee-container{
+  width: 60vw;
+  height: 70vh;
+  border-radius: 10px;
+  background-color: #0f0f0f;
+  display: flex;
+  flex-direction: row;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.menu-section{
+  display: flex;
+  flex-direction: column;
+  background-color: #79c2d0;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.user{
+  margin-bottom: 1rem;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 83px;
+}
+
+.user-btn-section{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.user-btn{
+  width: 100%;
+}
+
+.user-box{
+  border-bottom: solid 1px grey;
+}
+
+.user-box p{
+  align-content:center;
+}
+
+.user-box a{
+  align-content: center;
+}
+
+.employee-section{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: baseline;
+}
+
+.user-box-top, .project-box-top{
+  padding: 1rem 0;
+  background-color: cadetblue;
+}
+
+.user-box-top{
+  height: 50px;
+}
+
+
+.user-box, .user-box-top {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  width: 100%;
+  grid-template-areas:
+    "full-name email role project update delete";
+  align-items: center;
+  border-top-right-radius:10px
+}
+
+.full-name { grid-area: full-name; }
+
+.email { grid-area: email; }
+
+.role { grid-area: role; }
+
+.project { grid-area: project;}
+
+
+.update { 
+  grid-area: update;
+  align-content: center; 
+}
+
+.delete { 
+  grid-area: delete; 
+  align-content: center;
+}
+
+
+.del-btn:hover{
+  cursor: pointer;
+  color: red;
+}
+
+.up-btn:hover{
+  cursor: pointer;
+  color: green;
+}
+
+
+
+
+/* ADD EMPLOYEE */
+
+.addemployee-container{
+  width: 30vw;
+  height: 50vh;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  background-color: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-div{
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label{
+  margin-bottom: 1rem;
+}
+
+.contact-input{
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.form-btn{
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+
+
+
+
+/* PROJECTS */
+
+.project-box-top{
+  height: 50px;
+}
+
+.project-box, .project-box-top {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  width: 100%;
+  grid-template-areas:
+    "full-name email role update delete";
+  border-bottom: solid 1px gray;
+}
+
+.full-name { grid-area: full-name; }
+
+.email { grid-area: email; }
+
+.role { grid-area: role; }
+
+.sec{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
