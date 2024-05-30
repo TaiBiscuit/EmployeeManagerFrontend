@@ -1,9 +1,8 @@
 import React from "react";
 import UserAuthService from "../services/UserAuthService";
-import {useLocalState} from '../utils';
 
 export const Home = () => {
-    const [jwt, setJwt] = useLocalState("", "jwt");
+/*     const [jwt, setJwt] = useLocalState("", "jwt"); */
 
     function submitForm(e){
         e.preventDefault();
@@ -11,11 +10,11 @@ export const Home = () => {
             user: document.getElementById('fname').value,
             password:document.getElementById('fpas').value
         }
-        UserAuthService.userLogIn(reqBody)
-/*         .then((response) => Promise.all([response.json(), response.headers]))
+/*         UserAuthService.userLogIn(reqBody)
+         .then((response) => Promise.all([response.json(), response.headers]))
         .then(([body, headers]) => {
             setJwt(headers.get("authorization"))
-        }); */
+        }); */ 
     }
 
     return (

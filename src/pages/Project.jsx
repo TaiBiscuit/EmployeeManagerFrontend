@@ -17,6 +17,11 @@ export const Project = () => {
         navigate(`/updateproject/${id}`)
     } 
 
+    function goLogOut(e){
+        e.preventDefault()
+        navigate(`/`)
+    }
+    
     function deleteProject(e, id) {
         e.preventDefault();
         ProjectService.deleteProject(id)
@@ -36,53 +41,59 @@ export const Project = () => {
     return (
     <>
     <div className="employee-container">
-        <div className="menu-section">
-            <div className="user">
-                <p>Admin</p>
-                <a href=""><button className="log-out-btn">Log Out</button></a>
-            </div>
-            <div className="user-btn-section">
-                <a href="/employee"><button className="user-btn">Employees</button></a>
-                <a href="/projects"><button className="user-btn">Projects</button></a>
-            </div>
-        </div>
         <div className="employee-section">
-            <div className="project-box-top">
-            <div className="full-name sec">Project</div>
-            <div className="email sec">Id</div>
-            <div className="role sec">Employee in Charge</div>
-            <div className="update">Update</div>
-            <div className="delete">Delete</div>
-            </div>
-        <div className="project-box">
-            <div className="full-name sec"><p>Nico Campos</p></div>
-            <div className="email sec"><p>a@gmail.com</p></div>
-            <div className="role sec"><p>2</p></div>
-            <div className="update"><a href="#" className="up-btn">Update</a></div>
-            <div className="delete"><a href="#" className="del-btn">Delete</a></div>
-        </div>
-        {projectArr.map(project => {
-            return(
-                <>
-                <div className="project-box" key={project.id}>
-                    <p>{project.name}</p>
-                    <p>{project.id}</p>
-                    {
-                        project.employee ?
-                        <>
-                            <p>{project.employee}</p>
-                        </>
-                        :
-                        <>
-                            <button>Add Employee</button>
-                        </>
-                    }
-                    <a onClick={(e) => goToUpdate(e, project.id)} className="up-btn">Update</a>
-                    <a onClick={(e) => deleteProject(e, project.id)} className="del-btn">Delete</a>
+            <div className="top">
+                <div className="user">
+                    <p>Admin</p>
+                    <a href=""><button className="log-out-btn" onClick={(e) => goLogOut(e)}>Log Out</button></a>
                 </div>
-                </>
-            )
-        })}
+                <div className="project-box-top">
+                    <div className="full-name sec">Project</div>
+                    <div className="email sec">Id</div>
+                    <div className="role sec">Employee in Charge</div>
+                    <div className="update">Update</div>
+                    <div className="delete">Delete</div>
+                </div>
+            </div>
+            <div className="bottom">
+                <div className="menu-section">
+                    <div className="user-btn-section">
+                        <a href="/employee"><button className="user-btn">Employees</button></a>
+                        <a href="/projects"><button className="user-btn">Projects</button></a>
+                    </div>
+                </div>
+                <div className="right-side">
+                    <div className="project-box">
+                        <div className="full-name sec"><p>Nico Campos</p></div>
+                        <div className="email sec"><p>a@gmail.com</p></div>
+                        <div className="role sec"><p>2</p></div>
+                        <div className="update"><a href="#" className="up-btn">Update</a></div>
+                        <div className="delete"><a href="#" className="del-btn">Delete</a></div>
+                    </div>
+                    {projectArr.map(project => {
+                        return(
+                            <>
+                            <div className="project-box" key={project.id}>
+                                <p>{project.name}</p>
+                                <p>{project.id}</p>
+                                {
+                                    project.employee ?
+                                    <>
+                                        <p>{project.employee}</p>
+                                    </>
+                                    :
+                                    <>
+                                        <button>Add Employee</button>
+                                    </>
+                                }
+                                <a onClick={(e) => goToUpdate(e, project.id)} className="up-btn">Update</a>
+                                <a onClick={(e) => deleteProject(e, project.id)} className="del-btn">Delete</a>
+                            </div>
+                            </>
+                        )
+                    })}
+                </div>
+            </div>
         </div>
     </div>
     <a href="/addproject"><button className="inter-btn">Create a new project</button></a>

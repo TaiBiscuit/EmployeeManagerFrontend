@@ -58,7 +58,7 @@ a{
 .menu-section{
   display: flex;
   flex-direction: column;
-  background-color: #79c2d0;
+  background-color: #0a192f;
   width: 30%;
   align-items: center;
   justify-content: center;
@@ -67,14 +67,12 @@ a{
 
 .user{
   margin-bottom: 1rem;
-  background-color: cadetblue;
+  background-color: #233554;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  height: 83px;
+  width: 30%;
+  height: 100%;
 }
 
 .user-btn-section{
@@ -108,7 +106,7 @@ a{
 
 .user-box-top, .project-box-top{
   padding: 1rem 0;
-  background-color: cadetblue;
+  background-color: #233554;
 }
 
 .user-box-top{
@@ -160,7 +158,21 @@ a{
 }
 
 
+.top{
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
 
+.bottom{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.right-side{
+  width: 100%;
+}
 
 /* ADD EMPLOYEE */
 
@@ -218,7 +230,6 @@ form{
   width: 100%;
   grid-template-areas:
     "full-name email role update delete";
-  border-bottom: solid 1px gray;
 }
 
 .full-name { grid-area: full-name; }
@@ -226,6 +237,11 @@ form{
 .email { grid-area: email; }
 
 .role { grid-area: role; }
+
+
+.project-box{
+  border-bottom: solid 1px gray;
+}
 
 .sec{
   display: flex;

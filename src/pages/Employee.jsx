@@ -36,55 +36,61 @@ export const Employee = () => {
     return (
     <>
     <div className="employee-container">
-        <div className="menu-section">
-            <div className="user">
-                <p>Admin</p>
-                <a href=""><button className="log-out-btn">Log Out</button></a>
-            </div>
-            <div className="user-btn-section">
-                <a href="/employee"><button className="user-btn">Employees</button></a>
-                <a href="/projects"><button className="user-btn">Projects</button></a>
-            </div>
-        </div>
         <div className="employee-section">
-            <div className="user-box-top">
-            <div className="full-name">Full Name</div>
-            <div className="email">Email</div>
-            <div className="role">Role</div>
-            <div className="project">Main Project</div>
-            <div className="update">Update</div>
-            <div className="delete">Delete</div>
-            </div>
-        <div className="user-box">
-            <div className="full-name"><p>Natasha Gomez</p></div>
-            <div className="email"><p>abc@gmail.com</p></div>
-            <div className="role"><p>1</p></div>
-            <div className="update"><a href="#" className="up-btn">Update</a></div>
-            <div className="delete"><a href="#" className="del-btn">Delete</a></div>
-        </div>
-        {employeeArr.map(employee => {
-            return(
-                <>
-                <div className="user-box" key={employee.id}>
-                    <p>{employee.firstName} {employee.lastName}</p>
-                    <p>{employee.email}</p>
-                    <p>{employee.rol}</p>
-                    {
-                        employee.project ?
-                        <>
-                            <p>{employee.project}</p>
-                        </>
-                        :
-                        <>
-                            <p>NONE</p>
-                        </>
-                    }
-                    <a onClick={(e) => goToUpdate(e, employee.id)} className="up-btn">Update</a>
-                    <a onClick={(e) => deleteEmployee(e, employee.id)} className="del-btn">Delete</a>
+            <div className="top">
+                <div className="user">
+                    <p>Admin</p>
+                    <a href=""><button className="log-out-btn" onClick={(e) => goLogOut(e)}>Log Out</button></a>
                 </div>
-                </>
-            )
-        })}
+                <div className="user-box-top">
+                    <div className="full-name">Full Name</div>
+                    <div className="email">Email</div>
+                    <div className="role">Role</div>
+                    <div className="project">Main Project</div>
+                    <div className="update">Update</div>
+                    <div className="delete">Delete</div>
+                </div>
+            </div>
+            <div className="bottom">
+                <div className="menu-section">
+                    <div className="user-btn-section">
+                            <a href="/employee"><button className="user-btn">Employees</button></a>
+                            <a href="/projects"><button className="user-btn">Projects</button></a>
+                        </div>
+                    </div>
+                    <div className="right-side">
+                        <div className="user-box">
+                            <div className="full-name"><p>Natasha Gomez</p></div>
+                            <div className="email"><p>abc@gmail.com</p></div>
+                            <div className="role"><p>1</p></div>
+                            <div className="update"><a href="#" className="up-btn">Update</a></div>
+                            <div className="delete"><a href="#" className="del-btn">Delete</a></div>
+                        </div>
+                        {employeeArr.map(employee => {
+                            return(
+                                <>
+                                <div className="user-box" key={employee.id}>
+                                    <p>{employee.firstName} {employee.lastName}</p>
+                                    <p>{employee.email}</p>
+                                    <p>{employee.rol}</p>
+                                    {
+                                        employee.project ?
+                                        <>
+                                            <p>{employee.project}</p>
+                                        </>
+                                        :
+                                        <>
+                                            <p>NONE</p>
+                                        </>
+                                    }
+                                    <a onClick={(e) => goToUpdate(e, employee.id)} className="up-btn">Update</a>
+                                    <a onClick={(e) => deleteEmployee(e, employee.id)} className="del-btn">Delete</a>
+                                </div>
+                                </>
+                        )
+                    })}
+                </div>
+            </div>
         </div>
     </div>
     <a href="/addemployee"><button className="inter-btn">Create a new employee</button></a>
